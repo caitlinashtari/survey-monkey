@@ -2,11 +2,16 @@
 
 <ol>
   <% @survey.questions.each do |question| %>
-  <li><%= question.question %></li>
+  <li><%= question.question %><a style="color:red;" href="/edit_question/<%= question.id %>"> Edit Question / Delete</a></li>
   <% end %>
 </ol>
-
+<hr>
 <form action="/survey/<%= @survey.id %>" method="post">
-  <input type="text" id="new_question" placeholder = "Enter Survey Question" name="new_question">
-  <button type="submit" name="add_question">Add Question</button>
+  <div class='col-xs-3'>
+    <input type="text" id="new_question" placeholder = "Enter Survey Question" name="new_question" class='form-control'>
+  </div>
+  <div class='col-xs-1'>
+    <button type="submit" name="add_question" class='btn btn-success'>Add Question</button>
+  </div>
 </form>
+<a href="/">Back</a>

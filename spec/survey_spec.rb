@@ -16,7 +16,7 @@ describe(Survey) do
       survey1 = Survey.create({:name => "Favorites"})
       survey2 = Survey.create({:name => "Favorites"})
       survey2.redundant?()
-      expect(errors.name()).to(eq("is redundant"))
+      expect(errors.name()).to(eq())
     end
   end
 end

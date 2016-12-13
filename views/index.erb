@@ -1,14 +1,22 @@
-<h1>Survey Creator</h1>
-
+<h1 class = "well" style='text-align: center;'>Survey Creator</h1>
+<hr>
 <h2>Here are all of your surveys:</h2>
 
 <ul>
   <% @surveys.each() do |survey| %>
-  <li><a href="/survey/<%= survey.id %>"><%= survey.name() %></a></li>
+  <li><a href="/survey/<%= survey.id %>"><%= survey.name() %> </a><a style="color:red;" href="/edit_survey/<%= survey.id %>"> Edit Name / Delete</a></li>
   <% end %>
 </ul>
 
-<form action="/" method="post">
-  <input type="text" id="new_survey" placeholder = "Enter Survey Here" name="new_survey">
-  <button type="submit" name="add_survey">Add Survey</button>
-</form>
+<div class = "row">
+
+    <form action="/" method="post">
+      <div class = 'col-xs-3'>
+        <input type="text" id="new_survey" placeholder = "Add Survey Here" name="new_survey" class = "form-control">
+      </div>
+      <div class='col-xs-1'>
+        <button type="submit" name="add_survey" class='btn btn-success'>Add Survey</button>
+    </div>
+  </form>
+
+</div>

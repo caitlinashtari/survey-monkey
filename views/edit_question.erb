@@ -1,0 +1,16 @@
+<h1>Editing: "<%= @question.question %>"</h1>
+
+<form action="/survey/<%= @survey_id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="question_id" value="<%= @question.id %>">
+  <input type="text" name="edit_question" placeholder="Change Question">
+  <button type="sumbit" name="Submit" class ="btn btn-warning">Submit</button>
+</form>
+
+<form action="/survey/<%= @survey_id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="question_id" value="<%= @question.id %>">
+  <button type="submit" name="delete" class = "btn btn-danger">Delete</button>
+</form>
+<hr>
+<a href="/survey/<%= @survey_id %>">Back</a>

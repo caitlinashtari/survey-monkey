@@ -1,0 +1,16 @@
+<h1>Editing: "<%= @survey.name %>"</h1>
+
+<form action="/" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="survey_id" value="<%= @survey.id %>">
+  <input type="text" name="edit_name" placeholder="Change Name">
+  <button type="sumbit" name="Submit" class ="btn btn-warning">Submit</button>
+</form>
+
+<form action="/" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="survey_id" value="<%= @survey.id %>">
+  <button type="submit" name="delete" class = "btn btn-danger">Delete</button>
+</form>
+<hr>
+<a href='/'>Back</a>
