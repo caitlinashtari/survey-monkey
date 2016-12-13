@@ -1,0 +1,14 @@
+<h1>Survey Creator</h1>
+
+<h2>Here are all of your surveys:</h2>
+
+<ul>
+  <% @surveys.each() do |survey| %>
+  <li><a href="/survey/<%= survey.id %>"><%= survey.name() %></a></li>
+  <% end %>
+</ul>
+
+<form action="/" method="post">
+  <input type="text" id="new_survey" placeholder = "Enter Survey Here" name="new_survey">
+  <button type="submit" name="add_survey">Add Survey</button>
+</form>
